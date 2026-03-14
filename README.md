@@ -8,6 +8,21 @@ The processor was verified through simulation and synthesized using Xilinx Vivad
 
 ---
 
+## Key Results
+
+• Implemented a **5-stage pipelined RISC-V processor (RV32I subset)** in SystemVerilog  
+• Designed **hazard detection and forwarding logic** to resolve RAW dependencies  
+• Implemented **pipeline stall and flush control** for correct branch handling  
+• Verified processor behavior using **SystemVerilog simulation testbench**  
+• Successfully synthesized design using **Xilinx Vivado**
+
+Key verification artifacts included:
+- Instruction execution trace validation
+- Pipeline hazard analysis
+- Simulation waveform verification
+
+---
+
 ## Processor Architecture
 
 The processor consists of several major components:
@@ -60,9 +75,15 @@ and illustrate the detection and handling of hazards, including:
 
 ## Simulation Results
 
-The processor was verified using a SystemVerilog testbench in the Vivado simulator.
-The waveform demonstrates correct operation of pipeline registers, forwarding
-signals, hazard detection signals, and memory write operations.
+Functional verification was performed using a SystemVerilog testbench.
+
+The simulation validates:
+
+• correct instruction execution  
+• register write-back behavior  
+• hazard detection signals  
+• forwarding control signals  
+• memory write operations
 
 ![Simulation Waveform](docs/Simulation_Waveform.PNG)
 
@@ -79,12 +100,54 @@ xc7a100tcsg324-1
 
 ---
 
+## Processor Block Diagram
+
+The overall processor architecture is shown below.  
+The design separates control logic, datapath operations, and hazard detection.
+
+![Processor Block Diagram](docs/Processor_Block_Diagram.png)
+
+---
+
 ## Tools Used
 
 - SystemVerilog  
 - Xilinx Vivado  
 - Vivado Simulator  
 - FPGA RTL synthesis and implementation
+
+---
+
+## Design Specifications
+
+| Feature | Description |
+|-------|-------------|
+| ISA | RV32I subset |
+| Architecture | 5-stage pipeline |
+| Pipeline Stages | IF, ID, EX, MEM, WB |
+| Hazard Handling | Forwarding + Stall + Flush |
+| Data Hazards | RAW dependencies resolved via forwarding |
+| Control Hazards | Branch flush mechanism |
+| Memory Model | Separate instruction and data memory |
+| Register File | 32 general purpose registers |
+| Implementation | SystemVerilog RTL |
+| Verification | SystemVerilog testbench simulation |
+
+---
+
+## Key Design Components
+
+### Controller
+Decodes instructions and generates control signals for pipeline stages including ALU control, memory operations, and register write-back.
+
+### Datapath
+Contains the register file, ALU, multiplexers, and pipeline registers responsible for instruction execution.
+
+### Hazard Unit
+Detects data and control hazards and generates stall, flush, and forwarding signals to maintain correct execution.
+
+### Forwarding Logic
+Reduces pipeline stalls by forwarding results from later pipeline stages to earlier stages when data dependencies occur.
 
 ---
 
