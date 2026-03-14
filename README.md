@@ -17,7 +17,7 @@ The processor consists of several major components:
 - **Hazard Unit** – detection and resolution of data and control hazards  
 - **Instruction and Data Memory Interfaces**
 
-![RTL Architecture](docs/RTL_Analysis_Schematic.png)
+![RTL Architecture](docs/RTL_Analysis_Schematic.PNG)
 
 ---
 
@@ -64,7 +64,7 @@ The processor was verified using a SystemVerilog testbench in the Vivado simulat
 The waveform demonstrates correct operation of pipeline registers, forwarding
 signals, hazard detection signals, and memory write operations.
 
-![Simulation Waveform](docs/Simulation_Waveform.png)
+![Simulation Waveform](docs/Simulation_Waveform.PNG)
 
 ---
 
@@ -75,7 +75,7 @@ The design was synthesized using Xilinx Vivado.
 Target FPGA:
 xc7a100tcsg324-1
 
-![Vivado Implementation Summary](docs/Project_Summary.png)
+![Vivado Implementation Summary](docs/Project_Summary.PNG)
 
 ---
 
