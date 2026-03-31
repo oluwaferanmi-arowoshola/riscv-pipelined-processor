@@ -151,6 +151,19 @@ Reduces pipeline stalls by forwarding results from later pipeline stages to earl
 
 ---
 
+## Project Structure
+
+```text
+.
+├── docs/
+├── rtl/
+├── simulation/
+├── PROJECT_OVERVIEW.md
+└── README.md
+```
+
+---
+
 ## Author
 
 Oluwaferanmi Arowoshola  
